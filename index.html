@@ -91,6 +91,14 @@
     }
     .note { color: var(--muted); font-size: 0.92rem; margin: -8px 0 20px; }
 
+    /* current interest */
+    .callout {
+      border-left: 3px solid var(--link); background: var(--tag-bg);
+      padding: 14px 18px; border-radius: 0 8px 8px 0;
+    }
+    .callout p { margin: 0; }
+    .callout a { cursor: pointer; }
+
     /* news */
     .news { list-style: none; padding: 0; margin: 0; }
     .news li { display: flex; gap: 16px; padding: 4px 0; }
@@ -173,6 +181,18 @@
     </div>
     <img class="photo" src="profile.jpg" alt="Photo of Xuewen Luo">
   </header>
+
+  <section id="interest">
+    <h2>Current Interest</h2>
+    <div class="callout">
+      <p>
+        Lately I've been thinking a lot about <b>how to evaluate driving behavior</b> &mdash;
+        what makes a trajectory safe, reasonable, and human-like, and how to measure it.
+        I'm always happy to chat and collaborate with anyone interested in this topic &mdash;
+        feel free to <a id="reach-out">reach out</a>!
+      </p>
+    </div>
+  </section>
 
   <section id="news">
     <h2>News</h2>
@@ -426,6 +446,11 @@
     btn.addEventListener("click", function () {
       var open = box.classList.toggle("open");
       btn.setAttribute("aria-expanded", open);
+    });
+    document.getElementById("reach-out").addEventListener("click", function () {
+      box.classList.add("open");
+      btn.setAttribute("aria-expanded", true);
+      btn.scrollIntoView({ behavior: "smooth", block: "center" });
     });
     copy.addEventListener("click", function () {
       function done() { copy.textContent = "Copied!"; setTimeout(function () { copy.textContent = "Copy"; }, 1500); }
