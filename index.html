@@ -132,6 +132,44 @@
 
     footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; text-align: center; }
 
+    /* visitor reactions */
+    .react {
+      position: fixed; top: 16px; right: 16px; z-index: 50;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+      font-size: 0.88rem;
+    }
+    .react-toggle {
+      font: inherit; cursor: pointer; border: 1px solid var(--rule); border-radius: 999px;
+      background: var(--bg); color: var(--text); padding: 6px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    .react-toggle:hover { border-color: var(--link); }
+    .react-panel {
+      display: none; flex-direction: column; gap: 4px; width: 215px;
+      background: var(--bg); border: 1px solid var(--rule); border-radius: 12px;
+      padding: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    }
+    .react.open .react-panel { display: flex; }
+    .react-hint { color: var(--muted); font-size: 0.8rem; margin: 0 2px 2px; }
+    .react-btn {
+      position: relative; display: flex; align-items: center; gap: 8px;
+      font: inherit; text-align: left; cursor: pointer;
+      background: none; color: var(--text); border: 1px solid transparent; border-radius: 8px;
+      padding: 5px 8px; transition: background .15s, transform .1s;
+    }
+    .react-btn:hover { background: var(--tag-bg); }
+    .react-btn:active { transform: scale(0.96); }
+    .react-btn .emo { font-size: 1.1rem; width: 1.4em; text-align: center; }
+    .react-btn .lbl { flex: 1; white-space: nowrap; }
+    .react-btn .cnt { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 2ch; text-align: right; }
+    .react-btn.done { background: var(--tag-bg); border-color: var(--link); }
+    .react-btn.done .cnt { color: var(--link); font-weight: 700; }
+    .plus {
+      position: absolute; right: 10px; top: 0; pointer-events: none;
+      color: var(--link); font-weight: 700; animation: rise .9s ease-out forwards;
+    }
+    @keyframes rise { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-22px); } }
+
     @media (max-width: 720px) {
       body { font-size: 16px; }
       .wrap { padding: 36px 16px 60px; }
@@ -434,6 +472,18 @@
 
   <footer>Last updated October 2026</footer>
 </div>
+
+<div class="react" id="react">
+  <button type="button" class="react-toggle" id="react-toggle" aria-expanded="false">👋 Leave a mark</button>
+  <div class="react-panel" id="react-panel">
+    <p class="react-hint">Tap to say you were here</p>
+    <button type="button" class="react-btn" data-key="footprint"><span class="emo">👣</span><span class="lbl">Stopped by</span><span class="cnt">–</span></button>
+    <button type="button" class="react-btn" data-key="wander"><span class="emo">🌿</span><span class="lbl">Just wandering</span><span class="cnt">–</span></button>
+    <button type="button" class="react-btn" data-key="interesting"><span class="emo">✨</span><span class="lbl">Interesting!</span><span class="cnt">–</span></button>
+    <button type="button" class="react-btn" data-key="collab"><span class="emo">🤝</span><span class="lbl">Let's collaborate</span><span class="cnt">–</span></button>
+    <button type="button" class="react-btn" data-key="coffee"><span class="emo">☕</span><span class="lbl">Coffee chat?</span><span class="cnt">–</span></button>
+  </div>
+</div>
 <script>
   (function () {
     var btn = document.getElementById("contact-btn");
@@ -459,6 +509,62 @@
         var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
         try { document.execCommand("copy"); done(); } catch (e) {}
       }
+    });
+  })();
+</script>
+<script>
+  /* Visitor reactions: counts are stored with the free Abacus counter API. */
+  (function () {
+    var API = "https://abacus.jasoncameron.dev";
+    var NS = "xuewen2025-snow-site";
+    var root = document.getElementById("react");
+    var toggle = document.getElementById("react-toggle");
+
+    function setOpen(open) {
+      root.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open);
+    }
+    toggle.addEventListener("click", function () { setOpen(!root.classList.contains("open")); });
+    if (window.innerWidth >= 1300) setOpen(true);
+
+    function mine(key, val) {
+      try {
+        if (val) localStorage.setItem("react-" + key, "1");
+        return localStorage.getItem("react-" + key) === "1";
+      } catch (e) { return false; }
+    }
+
+    document.querySelectorAll(".react-btn").forEach(function (btn) {
+      var key = btn.dataset.key;
+      var cnt = btn.querySelector(".cnt");
+      if (mine(key)) btn.classList.add("done");
+
+      fetch(API + "/get/" + NS + "/" + key)
+        .then(function (r) { return r.json(); })
+        .then(function (d) { cnt.textContent = d.value || 0; })
+        .catch(function () { cnt.textContent = "0"; });
+
+      btn.addEventListener("click", function () {
+        var plus = document.createElement("span");
+        plus.className = "plus";
+        if (mine(key)) {
+          plus.textContent = "♥";
+          btn.appendChild(plus);
+          setTimeout(function () { plus.remove(); }, 900);
+          return;
+        }
+        plus.textContent = "+1";
+        btn.appendChild(plus);
+        setTimeout(function () { plus.remove(); }, 900);
+        btn.classList.add("done");
+        mine(key, true);
+        var n = parseInt(cnt.textContent, 10);
+        cnt.textContent = isNaN(n) ? 1 : n + 1;
+        fetch(API + "/hit/" + NS + "/" + key)
+          .then(function (r) { return r.json(); })
+          .then(function (d) { if (d.value) cnt.textContent = d.value; })
+          .catch(function () {});
+      });
     });
   })();
 </script>
