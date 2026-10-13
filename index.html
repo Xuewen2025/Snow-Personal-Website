@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xuewen Luo</title>
+  <meta name="description" content="Xuewen Luo — Ph.D. student at the University of Utah working on autonomous driving and vision-language models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2328;
+      --muted: #5f6670;
+      --link: #2f6fbf;
+      --link-hover: #c0392b;
+      --rule: #e6e8eb;
+      --tag-bg: #eef4fb;
+      --tag-text: #2f6fbf;
+      --me: #000000;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16181c;
+        --text: #e3e5e8;
+        --muted: #9aa1aa;
+        --link: #6ea8f0;
+        --link-hover: #f08a7a;
+        --rule: #2a2e35;
+        --tag-bg: #1e2a3a;
+        --tag-text: #8bbcf5;
+        --me: #ffffff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Lato", -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); }
+
+    .wrap { max-width: 920px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    /* ---------- header ---------- */
+    header { display: flex; gap: 48px; align-items: center; }
+    .intro { flex: 1; }
+    h1 { font-size: 2.6rem; font-weight: 400; margin: 0 0 4px; letter-spacing: 0.01em; }
+    .role { color: var(--muted); margin: 0 0 18px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 18px 0 0; font-size: 0.95rem; }
+    .contact a { border-bottom: 1px solid transparent; }
+    .contact a:hover { border-bottom-color: currentColor; }
+    .photo {
+      width: 230px; height: 290px; flex-shrink: 0;
+      object-fit: cover; object-position: center 35%;
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+    .intro p { margin: 0 0 14px; }
+
+    /* ---------- sections ---------- */
+    section { margin-top: 52px; }
+    h2 {
+      font-size: 1.55rem; font-weight: 700; margin: 0 0 20px;
+      padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+    }
+    .note { color: var(--muted); font-size: 0.92rem; margin: -8px 0 20px; }
+
+    /* news */
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: flex; gap: 16px; padding: 4px 0; }
+    .news .date { color: var(--muted); min-width: 82px; font-variant-numeric: tabular-nums; }
+
+    /* publications */
+    .pub { margin-bottom: 22px; }
+    .pub-title { font-weight: 700; color: var(--link); }
+    .authors { margin: 2px 0; }
+    .authors b { color: var(--me); }
+    .venue { font-style: italic; color: var(--muted); }
+    .tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700; font-style: normal;
+      padding: 1px 8px; border-radius: 4px; margin-right: 8px; vertical-align: 2px;
+      background: var(--tag-bg); color: var(--tag-text);
+    }
+    .links a { margin-right: 10px; font-size: 0.95rem; }
+    .links a::before { content: "["; }
+    .links a::after { content: "]"; }
+
+    /* experience / education */
+    .item { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .item-main { flex: 1; }
+    .item-title { font-weight: 700; }
+    .item-sub { color: var(--muted); }
+    .item-date { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .item ul { margin: 6px 0 0; padding-left: 20px; }
+    .item li { margin: 2px 0; }
+
+    .plain { margin: 0; padding-left: 20px; }
+    .plain li { margin: 4px 0; }
+
+    footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; text-align: center; }
+
+    @media (max-width: 720px) {
+      body { font-size: 16px; }
+      .wrap { padding: 36px 16px 60px; }
+      header { flex-direction: column-reverse; gap: 24px; align-items: center; text-align: left; }
+      .photo { width: 180px; height: 225px; }
+      h1 { font-size: 2.1rem; text-align: center; }
+      .role { text-align: center; }
+      .contact { justify-content: center; }
+      .item { flex-direction: column; gap: 0; }
+      .news li { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="intro">
+      <h1>Xuewen Luo</h1>
+      <p class="role">Ph.D. Student · Transportation Engineering · University of Utah</p>
+
+      <p>
+        I am a first-year Ph.D. student in Transportation Engineering at the
+        <a href="https://www.utah.edu/">University of Utah</a> (since Fall 2025).
+        I am currently an ML Perception Intern at <a href="https://www.glydways.com/">Glydways</a>,
+        working on in-cabin perception.
+        Before that, I received my Master of Artificial Intelligence (High Distinction) from
+        <a href="https://www.monash.edu/">Monash University</a> and my B.M. from Yunnan University.
+      </p>
+      <p>
+        My research focuses on <b>autonomous driving</b> and <b>vision-language models</b>,
+        including multimodal perception and reasoning, <b>V2X cooperation</b>,
+        knowledge-augmented LLMs for driving, and <b>human-centered</b> understanding of autonomous vehicles.
+      </p>
+
+      <div class="contact">
+        <a href="mailto:snow29730@gmail.com">snow29730@gmail.com</a>
+        <a href="cv.pdf">CV</a>
+        <!-- TODO: fill in your own links -->
+        <a href="#">Google Scholar</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <img class="photo" src="profile.jpg" alt="Photo of Xuewen Luo">
+  </header>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">2026.08</span><span>Joined <b>Glydways</b> as an ML Perception Intern, working on in-cabin perception.</span></li>
+      <li><span class="date">2026.05</span><span>Received the <b>WTS Northern Utah Chapter Scholarship</b>.</span></li>
+      <li><span class="date">2026</span><span><b>V2X-UniPool</b> accepted to CVPR 2026 Workshops.</span></li>
+      <li><span class="date">2025.08</span><span>Started my Ph.D. at the <b>University of Utah</b>.</span></li>
+      <li><span class="date">2025.04</span><span>Awarded the <b>IEEE ITSS Fellowship</b>.</span></li>
+      <li><span class="date">2025</span><span>Two first-author papers at WACV 2025 Workshops and one paper at ICRA 2025.</span></li>
+    </ul>
+  </section>
+
+  <section id="preprints">
+    <h2>Under Review &amp; Preprints</h2>
+    <p class="note">(<b>bold</b> denotes myself)</p>
+
+    <div class="pub">
+      <div class="pub-title">Which Trajectory Is Safer? Combining Rule and Learning for Safety Evaluation</div>
+      <div class="authors"><b>Xuewen Luo</b>, L. Jiang, B. Yu, F. Ding, X. Zuo, Y. Wang</div>
+      <div class="venue"><span class="tag">ICRA 2027</span>Under review</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Who Responds When the Driver Is Gone? A Framework for Human Intent Understanding</div>
+      <div class="authors"><b>Xuewen Luo</b>, D. Fan, R. Chen, Y. Cao, X. Liu, B. Yu, F. Yang, C. Liu</div>
+      <div class="venue"><span class="tag">arXiv 2026</span>arXiv:2607.04670</div>
+      <div class="links"><a href="https://arxiv.org/abs/2607.04670">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">From Sensors to Sentences: A Language-Driven Framework for V2X Cooperation</div>
+      <div class="authors"><b>Xuewen Luo</b>, B. Yu, Y. Zhang</div>
+      <div class="venue"><span class="tag">2026</span>Under review</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">JARVIS: From Visual Manuals to Autonomous Robotic Assembly</div>
+      <div class="authors">D. Fan, F. Ke, K. Y. Ma, <b>X. Luo</b>, W. Liang, V. M. Baskaran, H. Rezatofighi, Y. Wu</div>
+      <div class="venue"><span class="tag">ICLR 2027</span>Under review</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">CIVIC: End-to-End Sequence Compactness for Efficient Vision-Language Models</div>
+      <div class="authors">F. Yang, B. Yu, <b>X. Luo</b>, C. Liu, C. Liu</div>
+      <div class="venue"><span class="tag">arXiv 2026</span>arXiv:2605.28115</div>
+      <div class="links"><a href="https://arxiv.org/abs/2605.28115">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Locatability-Guided Adaptive Reasoning for Image Geo-Localization with Vision-Language Models</div>
+      <div class="authors">B. Yu, F. Yang, Y. Liu, C. Wang, <b>X. Luo</b>, T. Li, R. Ke, X. Zhou, C. Liu</div>
+      <div class="venue"><span class="tag">arXiv 2026</span>arXiv:2603.13628</div>
+      <div class="links"><a href="https://arxiv.org/abs/2603.13628">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">KnowDiffuser: A Knowledge-Guided Diffusion Planner with LLM Reasoning</div>
+      <div class="authors">F. Ding, <b>X. Luo</b>, F. Yang, B. Yu, H. H. Tew, G. Krishnasamy, J. Y. Loo</div>
+      <div class="venue"><span class="tag">arXiv 2026</span>arXiv:2603.10441</div>
+      <div class="links"><a href="https://arxiv.org/abs/2603.10441">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Drive As You Like: Strategy-Level Motion Planning Based on a Multi-Head Diffusion Model</div>
+      <div class="authors">F. Ding, <b>X. Luo</b>, H. H. Tew, R. Reddy, X. Wang, J. Y. Loo</div>
+      <div class="venue"><span class="tag">arXiv 2025</span>arXiv:2508.16947</div>
+      <div class="links"><a href="https://arxiv.org/abs/2508.16947">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">AirV2X: Unified Air-Ground Vehicle-to-Everything Collaboration</div>
+      <div class="authors">X. Gao, Y. Wu, F. Yang, <b>X. Luo</b>, K. Wu, X. Chen, Y. Wang, C. Liu, Y. Zhou, Z. Tu</div>
+      <div class="venue"><span class="tag">arXiv 2025</span>arXiv:2506.19283</div>
+      <div class="links"><a href="https://arxiv.org/abs/2506.19283">Paper</a></div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="pub-title">V2X-UniPool: Unifying Multimodal Perception and Knowledge Reasoning for Autonomous Driving</div>
+      <div class="authors"><b>Xuewen Luo</b>, F. Yang, D. Fan, X. Gao, B. Yu, Z. Li, Z. Tu, Y. Zhou, C. Liu</div>
+      <div class="venue"><span class="tag">CVPRW 2026</span>IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 747–756</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Edge-Based Multimodal Sensor Data Fusion with Vision-Language-Action (VLA) Model for Real-Time Autonomous Vehicle Accident Avoidance</div>
+      <div class="authors">F. Yang, B. Yu, Y. Zhou, <b>X. Luo</b>, Z. Tu, C. Liu</div>
+      <div class="venue"><span class="tag">EAAI 2026</span>Engineering Applications of Artificial Intelligence, vol. 180, 115186</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">GSMT: Graph Fusion and Spatiotemporal Task Correction for Multi-Bus Trajectory Prediction</div>
+      <div class="authors">F. Ding, H. H. Tew, J. Y. Loo, L. T. Liu, F. Y. Leong, <b>X. Luo</b>, K. K. Chin, J. J. Gan</div>
+      <div class="venue"><span class="tag">VTC 2026-Fall</span>IEEE 104th Vehicular Technology Conference</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">SenseRAG: Constructing Environmental Knowledge Bases with Proactive Querying for LLM-Based Autonomous Driving</div>
+      <div class="authors"><b>Xuewen Luo</b>, C. Liu, F. Ding, F. Yang, Y. Zhou, J. Y. Loo, H. H. Tew</div>
+      <div class="venue"><span class="tag">WACVW 2025</span>IEEE/CVF Winter Conference on Applications of Computer Vision Workshops, pp. 989–996</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">What's Happening: A Human-Centered Multimodal Interpreter Explaining the Actions of Autonomous Vehicles</div>
+      <div class="authors"><b>Xuewen Luo</b>, F. Ding, R. Chen, R. Panda, J. Y. Loo, S. Zhang</div>
+      <div class="venue"><span class="tag">WACVW 2025</span>IEEE/CVF Winter Conference on Applications of Computer Vision Workshops, pp. 1073–1080</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">A Comprehensive LLM-Powered Framework for Driving Intelligence Evaluation</div>
+      <div class="authors">S. You, <b>X. Luo</b>, X. Liang, J. Yu, C. Zheng, J. Gong</div>
+      <div class="venue"><span class="tag">ICRA 2025</span>IEEE International Conference on Robotics and Automation, pp. 7028–7035</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">PKRD-CoT: A Unified Chain-of-Thought Prompting for Multi-Modal Large Language Models in Autonomous Driving</div>
+      <div class="authors"><b>Xuewen Luo</b>, F. Ding, Y. Song, X. Zhang, J. Y. Loo</div>
+      <div class="venue"><span class="tag">ICONIP 2024</span>International Conference on Neural Information Processing, pp. 62–76</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Energy-Efficient Hybrid Model Predictive Trajectory Planning for Autonomous Electric Vehicles</div>
+      <div class="authors">F. Ding, <b>X. Luo</b>, G. Li, H. H. Tew, J. Y. Loo, C. W. Tong, A. S. M. Bakibillah, Z. Zhao, Z. Tao</div>
+      <div class="venue"><span class="tag">SMC 2024</span>IEEE International Conference on Systems, Man, and Cybernetics, pp. 1263–1269</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Cross-Domain Transfer Learning using Attention Latent Features for Multi-Agent Trajectory Prediction</div>
+      <div class="authors">J. Q. Loh, <b>X. Luo</b>, F. Ding, H. H. Tew, J. Y. Loo, Z. Y. Ding, S. Susilawati, C. P. Tan</div>
+      <div class="venue"><span class="tag">SMC 2024</span>IEEE International Conference on Systems, Man, and Cybernetics, pp. 3905–3911</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">KANS: Knowledge Discovery Graph Attention Network for Soft Sensing in Multivariate Industrial Processes</div>
+      <div class="authors">H. H. Tew, G. Li, F. Ding, <b>X. Luo</b>, J. Y. Loo, C. M. Ting, Z. Y. Ding, C. P. Tan</div>
+      <div class="venue"><span class="tag">SMC 2024</span>IEEE International Conference on Systems, Man, and Cybernetics, pp. 4377–4383</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">FedBChain: A Blockchain-Enabled Federated Learning Framework for Improving DeepConvLSTM with Comparative Strategy Insights</div>
+      <div class="authors">G. Li, C. H. Lim, Q. Ma, X. Tang, H. H. Tew, F. Ding, <b>X. Luo</b></div>
+      <div class="venue"><span class="tag">SMC 2024</span>IEEE International Conference on Systems, Man, and Cybernetics, pp. 2607–2612</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Glydways</div>
+        <div class="item-sub">ML Perception Intern · San Francisco Bay Area, CA</div>
+        <ul><li>In-cabin perception: understanding and responding to passengers inside the vehicle.</li></ul>
+      </div>
+      <div class="item-date">2026.08 – 2026.12</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Li Auto</div>
+        <div class="item-sub">LLM Algorithm Intern · Beijing, China</div>
+        <ul><li>Chain-of-Thought data synthesis and supervised fine-tuning strategies for LLM reasoning.</li></ul>
+      </div>
+      <div class="item-date">2024.12 – 2025.03</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">University of Utah</div>
+        <div class="item-sub">Research Intern · Advisor: Chenxi Liu</div>
+        <ul><li>Smart transportation systems for intersection safety → SenseRAG, V2X-UniPool.</li></ul>
+      </div>
+      <div class="item-date">2024.08 – 2025.01</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Tsinghua University</div>
+        <div class="item-sub">Research Intern · Advisor: Jiangtao Gong</div>
+        <ul><li>LLM + knowledge-graph RAG for driving behavior evaluation → ICRA 2025.</li></ul>
+      </div>
+      <div class="item-date">2024.05 – 2024.10</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Monash University</div>
+        <div class="item-sub">Research Intern · Advisor: Junnyong Loo</div>
+        <ul><li>End-to-end autonomous driving and trajectory planning → SMC 2024.</li></ul>
+      </div>
+      <div class="item-date">2023.10 – 2025.06</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">University of Utah</div>
+        <div class="item-sub">Ph.D. in Transportation Engineering</div>
+      </div>
+      <div class="item-date">2025.08 – Present</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Monash University</div>
+        <div class="item-sub">Master of Artificial Intelligence · High Distinction</div>
+      </div>
+      <div class="item-date">2023.07 – 2025.07</div>
+    </div>
+
+    <div class="item">
+      <div class="item-main">
+        <div class="item-title">Yunnan University</div>
+        <div class="item-sub">Bachelor of Logistics Management</div>
+      </div>
+      <div class="item-date">2018.09 – 2022.06</div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <h2>Honors &amp; Awards</h2>
+    <ul class="plain">
+      <li>WTS Northern Utah Chapter Undergraduate/Graduate Scholarship, 2026</li>
+      <li>IEEE ITSS Fellowship — Promoting Women, Young Professionals, and Leadership in ITS, 2025</li>
+    </ul>
+  </section>
+
+  <section id="service">
+    <h2>Service</h2>
+    <ul class="plain">
+      <li><b>Reviewer:</b> CVPR 2026, NeurIPS 2026, IROS 2025, WACV 2025, TRB 2026, CICTP 2025, ICIC 2025, Frontiers of Information Technology &amp; Electronic Engineering</li>
+      <li><b>TRB:</b> Friend Member, Connected and Automated Vehicle Systems Committee; Integrated Transportation Safety Management Committee</li>
+      <li><b>ASCE:</b> Corresponding Member, Data Sensing &amp; Analytics Committee; Transportation Safety Committee</li>
+    </ul>
+  </section>
+
+  <footer>Last updated October 2026</footer>
+</div>
+</body>
+</html>
