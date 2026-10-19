@@ -1,0 +1,355 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{ragged2e}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{enumitem,kantlipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lipsum}
+\usepackage[dvipsnames]{xcolor}
+%----------FONT OPTIONS----------
+% sans-serif
+%\usepackage{lmodern}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+%\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+ %\usepackage[sfdefault]{noto-sans}
+ \usepackage[default]{sourcesanspro}
+ %\usepackage{charter}[bch]
+
+
+%\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\centering
+\fancyfoot[C]{\small {Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.225in}
+\addtolength{\evensidemargin}{-0.225in}
+\addtolength{\textwidth}{0.45in}
+\addtolength{\topmargin}{0in}
+%\addtolength{\footskip}{0.1in}
+\addtolength{\textheight}{0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-14pt}\scshape\raggedright\large\color{RoyalPurple}
+}{}{0em}{}[\color{RoyalPurple}\titlerule \vspace{-3pt}]
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+%\setstretch{0.5}
+\begin{center}
+    \textbf{\Large Xuewen Luo} \\ \vspace{2pt}
+    Ph.D. Student, Transportation Engineering \\
+    University of Utah\\
+    E-mail: {snow29730@gmail.com}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{\textbf{EDUCATION}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+    {University of Utah}{}
+    {Ph.D. in Transportation Engineering}{08/2025 -- Present}
+    \resumeItemListStart
+    \resumeItem{Research Focus: Autonomous Driving and Vision-Language Models (VLMs)}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Monash University}{}
+      {Master of Artificial Intelligence}{07/2023 -- 07/2025}
+      \resumeItemListStart
+      \resumeItem{Honors: High Distinction}
+      \resumeItem{Relevant Coursework: Computer Architecture and Networks, Machine Learning, Deep Learning, Introduction to Databases, IT Research Methods, Modeling Discrete Optimization Problems}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Yunnan University}{}
+      {Bachelor of Logistics Management}{09/2018 -- 06/2022}
+      \resumeItemListStart
+      \resumeItem{Relevant Coursework: Advanced Mathematics, Fundamentals of Programming Design, Application of Lean Transformation Information Technology, Fundamentals of Computers, Logistics System Simulation}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\vspace{5pt}
+
+%-----------PUBLICATIONS-----------
+\section{\textbf{PUBLICATIONS}}
+
+\normalsize{\textbf{Journal Articles}}
+\vspace{10pt}
+\small
+\begin{justifying}
+\begin{enumerate}
+
+\item F. Yang, B. Yu, Y. Zhou, \textbf{X. Luo}, Z. Tu, C. Liu. “Edge-Based Multimodal Sensor Data Fusion with Vision-Language-Action (VLA) Model for Real-Time Autonomous Vehicle Accident Avoidance.” \textit{Engineering Applications of Artificial Intelligence}, vol. 180, 115186, 2026.
+
+\end{enumerate}
+\end{justifying}
+
+\vspace{6pt}
+\normalsize{\textbf{Refereed Conference Proceedings}}
+\vspace{10pt}
+\small
+\begin{justifying}
+\begin{enumerate}
+
+\item \textbf{X. Luo}, F. Yang, D. Fan, X. Gao, B. Yu, Z. Li, Z. Tu, Y. Zhou, C. Liu. “V2X-UniPool: Unifying Multimodal Perception and Knowledge Reasoning for Autonomous Driving.” \textit{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)}, pp. 747–756, 2026.
+
+\item F. Ding, H. H. Tew, J. Y. Loo, L. T. Liu, F. Y. Leong, \textbf{X. Luo}, K. K. Chin, J. J. Gan. “GSMT: Graph Fusion and Spatiotemporal Task Correction for Multi-Bus Trajectory Prediction.” \textit{IEEE 104th Vehicular Technology Conference (VTC2026-Fall)}, 2026.
+
+\item S. You, \textbf{X. Luo}, X. Liang, J. Yu, C. Zheng, J. Gong. “A Comprehensive LLM-Powered Framework for Driving Intelligence Evaluation.” \textit{IEEE International Conference on Robotics and Automation (ICRA)}, pp. 7028–7035, 2025.
+
+\item \textbf{X. Luo}, C. Liu, F. Ding, F. Yang, Y. Zhou, J. Y. Loo, H. H. Tew. “SenseRAG: Constructing Environmental Knowledge Bases with Proactive Querying for LLM-Based Autonomous Driving.” \textit{Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)}, pp. 989–996, 2025.
+
+\item \textbf{X. Luo}, F. Ding, R. Chen, R. Panda, J. Y. Loo, S. Zhang. “What’s Happening: A Human-Centered Multimodal Interpreter Explaining the Actions of Autonomous Vehicles.” \textit{Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)}, pp. 1073–1080, 2025.
+
+\item \textbf{X. Luo}, F. Ding, Y. Song, X. Zhang, J. Y. Loo. “PKRD-CoT: A Unified Chain-of-Thought Prompting for Multi-Modal Large Language Models in Autonomous Driving.” \textit{International Conference on Neural Information Processing (ICONIP)}, pp. 62–76, 2024.
+
+\item F. Ding, \textbf{X. Luo}, G. Li, H. H. Tew, J. Y. Loo, C. W. Tong, A. S. M. Bakibillah, Z. Zhao, Z. Tao. “Energy-Efficient Hybrid Model Predictive Trajectory Planning for Autonomous Electric Vehicles.” \textit{IEEE International Conference on Systems, Man, and Cybernetics (SMC)}, pp. 1263–1269, 2024.
+
+\item J. Q. Loh, \textbf{X. Luo}, F. Ding, H. H. Tew, J. Y. Loo, Z. Y. Ding, S. Susilawati, C. P. Tan. “Cross-Domain Transfer Learning using Attention Latent Features for Multi-Agent Trajectory Prediction.” \textit{IEEE International Conference on Systems, Man, and Cybernetics (SMC)}, pp. 3905–3911, 2024.
+
+\item H. H. Tew, G. Li, F. Ding, \textbf{X. Luo}, J. Y. Loo, C. M. Ting, Z. Y. Ding, C. P. Tan. “KANS: Knowledge Discovery Graph Attention Network for Soft Sensing in Multivariate Industrial Processes.” \textit{IEEE International Conference on Systems, Man, and Cybernetics (SMC)}, pp. 4377–4383, 2024.
+
+\item G. Li, C. H. Lim, Q. Ma, X. Tang, H. H. Tew, F. Ding, \textbf{X. Luo}. “FedBChain: A Blockchain-Enabled Federated Learning Framework for Improving DeepConvLSTM with Comparative Strategy Insights.” \textit{IEEE International Conference on Systems, Man, and Cybernetics (SMC)}, pp. 2607–2612, 2024.
+
+\end{enumerate}
+\end{justifying}
+
+\vspace{6pt}
+\normalsize{\textbf{Under Review / Preprints}}
+\vspace{10pt}
+\small
+\begin{justifying}
+\begin{enumerate}
+
+\item \textbf{X. Luo}, L. Jiang, B. Yu, F. Ding, X. Zuo, Y. Wang. “Which Trajectory Is Safer? Combining Rule and Learning for Safety Evaluation.” \textit{Under review at the IEEE International Conference on Robotics and Automation (ICRA)}, 2027.
+
+\item D. Fan, F. Ke, K. Y. Ma, \textbf{X. Luo}, W. Liang, V. M. Baskaran, H. Rezatofighi, Y. Wu. “JARVIS: From Visual Manuals to Autonomous Robotic Assembly.” \textit{Under review at the International Conference on Learning Representations (ICLR)}, 2027.
+
+\item \textbf{X. Luo}, B. Yu, Y. Zhang. “From Sensors to Sentences: A Language-Driven Framework for V2X Cooperation.” \textit{Under review}, 2026.
+
+\item \textbf{X. Luo}, D. Fan, R. Chen, Y. Cao, X. Liu, B. Yu, F. Yang, C. Liu. “Who Responds When the Driver Is Gone? A Framework for Human Intent Understanding.” \textit{arXiv preprint} arXiv:2607.04670, 2026.
+
+\item F. Yang, B. Yu, \textbf{X. Luo}, C. Liu, C. Liu. “CIVIC: End-to-End Sequence Compactness for Efficient Vision-Language Models.” \textit{arXiv preprint} arXiv:2605.28115, 2026.
+
+\item B. Yu, F. Yang, Y. Liu, C. Wang, \textbf{X. Luo}, T. Li, R. Ke, X. Zhou, C. Liu. “Locatability-Guided Adaptive Reasoning for Image Geo-Localization with Vision-Language Models.” \textit{arXiv preprint} arXiv:2603.13628, 2026.
+
+\item F. Ding, \textbf{X. Luo}, F. Yang, B. Yu, H. H. Tew, G. Krishnasamy, J. Y. Loo. “KnowDiffuser: A Knowledge-Guided Diffusion Planner with LLM Reasoning.” \textit{arXiv preprint} arXiv:2603.10441, 2026.
+
+\item F. Ding, \textbf{X. Luo}, H. H. Tew, R. Reddy, X. Wang, J. Y. Loo. “Drive As You Like: Strategy-Level Motion Planning Based on a Multi-Head Diffusion Model.” \textit{arXiv preprint} arXiv:2508.16947, 2025.
+
+\item X. Gao, Y. Wu, F. Yang, \textbf{X. Luo}, K. Wu, X. Chen, Y. Wang, C. Liu, Y. Zhou, Z. Tu. “AirV2X: Unified Air-Ground Vehicle-to-Everything Collaboration.” \textit{arXiv preprint} arXiv:2506.19283, 2025.
+
+\end{enumerate}
+\end{justifying}
+
+
+\vspace{10pt}
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{\textbf{RESEARCH EXPERIENCE}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Research on End-to-End Autonomous Driving}{Monash University}
+      {Research Intern (Supervisor: Junnyong Loo)}{10/2023 -- 06/2025}
+      \resumeItemListStart
+      \resumeItem{Conducted literature reviews on autonomous driving, deep learning, and computer vision.}
+      \resumeItem{Reproduced BEVFormer and BEVFusion models, performing simulations in MATLAB and PyTorch.}
+      \resumeItem{Published work: \textit{Energy-Efficient Hybrid Model Predictive Trajectory Planning for Autonomous Electric Vehicles} (SMC 2024).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Research on Smart Transportation Systems for Intersection Safety}{University of Utah}
+      {Research Intern (Supervisor: Chenxi Liu)}{08/2024 -- 01/2025}
+      \resumeItemListStart
+      \resumeItem{Trained YOLO models for object detection and implemented object tracking using StrongSORT.}
+      \resumeItem{Developed predictive models for intersection collision scenarios using real-time traffic data.}
+      \resumeItem{Published work: \textit{SenseRAG} (WACVW 2025) and \textit{V2X-UniPool} (CVPRW 2026).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Research on Driving Behavior Evaluation}{Tsinghua University}
+      {Research Intern (Supervisor: Jiangtao Gong)}{05/2024 -- 10/2024}
+      \resumeItemListStart
+      \resumeItem{Processed predictive driving behavior data and created knowledge graphs for analysis.}
+      \resumeItem{Utilized LLM-based retrieval-augmented generation with knowledge graphs (RAG-KG) to comprehensively evaluate driving behavior.}
+      \resumeItem{Published work: \textit{LLM-Powered Framework for Driving Intelligence Evaluation} (ICRA 2025).}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+\vspace{5pt}
+
+%-----------INDUSTRY EXPERIENCE-----------
+\section{\textbf{INDUSTRY EXPERIENCE}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {ML Perception Intern}{Glydways, San Francisco Bay Area, CA, USA}
+      {Intern}{08/2026 -- 12/2026}
+      \resumeItemListStart
+      \resumeItem{Working with the ML Perception team on the in-cabin project, focusing on understanding and responding to passengers inside the vehicle.}
+      \resumeItem{Applying research on human-in-the-loop autonomous driving to real-world in-cabin perception problems.}
+      \resumeItem{Gaining hands-on experience with perception systems in an industry setting.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {LLM Algorithm Intern}{Li Auto, Beijing, China}
+      {Intern}{12/2024 -- 03/2025}
+      \resumeItemListStart
+      \resumeItem{Synthesized Chain-of-Thought (CoT) text data to enhance the reasoning capabilities of large language models.}
+      \resumeItem{Investigated effective strategies for supervised fine-tuning (SFT), such as multi-agent model integration.}
+      \resumeItem{Conducted fine-tuning experiments, analyzed results, and identified performance improvements.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{10pt}
+
+%-----------HONORS & AWARDS-----------
+\section{\textbf{HONORS \& AWARDS}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {WTS Northern Utah Chapter Undergraduate/Graduate Scholarship}{05/2026}
+      {WTS International, Northern Utah Chapter}{}
+    \vspace{4pt}
+
+    \resumeSubheading
+      {IEEE ITSS Fellowship}{04/2025}
+      {Fellowship Program for Promoting Women, Young Professionals, and Leadership in ITS}{}
+  \resumeSubHeadingListEnd
+\vspace{10pt}
+
+%-----------PROFESSIONAL SERVICES-----------
+
+\section{\textbf{PROFESSIONAL SERVICES}}
+
+\textbf{Transportation Research Board (TRB)}
+
+Paper Review Coordinator (PRC), TRB Annual Meeting 2027
+
+Friend Member, Connected and Automated Vehicle Systems Committee
+
+Friend Member, Integrated Transportation Safety Management Committee
+
+\textbf{American Society of Civil Engineers (ASCE)}
+
+Corresponding Member, Data Sensing \& Analytics Committee
+
+Corresponding Member, Transportation Safety Committee
+
+\vspace{10pt}
+%-----------REFEREE EXPERIENCE-----------
+\section{\textbf{REFEREE FOR JOURNALS AND CONFERENCES}}
+
+\textbf{Conferences}\\
+
+\hspace{0.5cm}IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026\\
+
+\hspace{0.5cm}Conference on Neural Information Processing Systems (NeurIPS) 2026\\
+
+\hspace{0.5cm}IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025\\
+
+\hspace{0.5cm}IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025\\
+
+\hspace{0.5cm}COTA International Conference of Transportation Professionals (CICTP) 2025\\
+
+\hspace{0.5cm}International Conference on Intelligent Computing (ICIC) 2025\\
+
+\hspace{0.5cm}Transportation Research Board (TRB) Annual Meeting 2026\\
+
+\textbf{Journals}\\
+
+\hspace{0.5cm}Frontiers of Information Technology \& Electronic Engineering\
+
+
+
+
+
+%-------------------------------------------
+\end{document}
