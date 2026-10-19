@@ -99,7 +99,11 @@
     .callout a { cursor: pointer; }
 
     /* news */
-    .news { list-style: none; padding: 0; margin: 0; }
+    .news {
+      list-style: none; margin: 0; padding: 10px 16px;
+      border: 1px solid var(--rule); border-radius: 8px;
+      max-height: 200px; overflow-y: auto; overscroll-behavior: contain;
+    }
     .news li { display: flex; gap: 16px; padding: 4px 0; }
     .news .date { color: var(--muted); min-width: 82px; font-variant-numeric: tabular-nums; }
 
@@ -231,6 +235,8 @@
   <section id="news">
     <h2>News</h2>
     <ul class="news">
+      <li><span class="date">2026.10</span><span>Three papers accepted to <b>TRB 2027</b>.</span></li>
+      <li><span class="date">2026.10</span><span><b>Intent2Drive</b> and <b>LangV2X</b> selected as Podium Presentations at <b>ASCE 2027</b>.</span></li>
       <li><span class="date">2026.08</span><span>Joined <b>Glydways</b> as an ML Perception Intern, working on in-cabin perception.</span></li>
       <li><span class="date">2026.06</span><span><b>V2X-UniPool</b> appeared at the CVPR 2026 Workshops in Denver.</span></li>
       <li><span class="date">2026.05</span><span>Received the <b>WTS Northern Utah Chapter Scholarship</b>.</span></li>
